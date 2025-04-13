@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Gemini Clone</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+
+    #input-container {
+      margin-bottom: 10px;
+    }
+
+    #output-container {
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-height: 50px; /* Ensure it's visible even without content */
+    }
+  </style>
+  <link rel="stylesheet" href="/Gemini-demo/demo.css">
+</head>
+<body>
+ 
+
+  <nav>
+      <div class="chats-bar side-bar">
+        <img src="/images/menu-bar.png" alt="menu bar icon" class="menu-bar-icon">
+      </div>
+      <div class="nav-bar">
+        <div class="left-side">
+          <p>Gemini</p>
+        </div>
+        <div class="right-side">
+          <img src="/images/profile-picture.jpeg" alt="McLovinn"  class="profile-picture">
+        </div>
+      </div>
+  </nav>
+
+
+  <div class="phaseOne">
+    <div class="phaseOne-centering-container">
+      <div class="phaseOne-top-intro">
+        <h1>Hello, Dev.</h1>
+        <h2>How can I help you today?</h2>
+     </div>
+
+     <div class="phaseOne-midddle-suggestions">
+        <div class="suggestion">
+          <p>What is the weather in Lagos?</p>
+          <img src="/images/destination-icon.png" alt="destination icon" class="suggestion-icon">
+        </div>
+
+        <div class="suggestion">
+          <p>Tell me 5 interesting facts about the world</p>
+          <img src="/images/lightbulb-icon.png" alt="lightbulb icon" class="suggestion-icon">
+        </div>
+
+        <div class="suggestion">
+          <p>What is the capital of Nigeria?</p>
+          <img src="/images/chat-icon.png" alt="chat icon" class="suggestion-icon">
+        </div>
+
+        <div class="suggestion">
+          <p>Can you name me 5 places to visit during a summer vacation</p>
+          <img src="/images/code-block-icon.png" alt="code block icon" class="suggestion-icon">
+        </div>
+
+     </div>
+
+     <div class="phaseOne-bottom-inputPrompt">
+      
+          <div class="input-container">
+            <input type="text" placeholder="Enter a prompt here" class="prompt-input">
+            <img src="/images/add-photo-icon.png" alt="Image" class="input-icon left-icon">
+            <img src="/images/mic-icon.png" alt="Mic" class="input-icon right-icon">
+        </div>
+
+     </div>
+    </div>
+  </div>
+
+<!--   
+  <div id="input-container">
+    <label for="user-input" style="color: #000;">Enter your prompt:</label>
+    <input type="text" id="user-input" name="user-input" placeholder="Enter a prompt here">
+    <button id="submit-button">Submit</button>
+  </div>
+
+  <div id="output-container">
+    <p id="api-response"></p> 
+  </div> -->
+
+  <script src="scriptdemo.js"></script>
+</body>
+</html>
