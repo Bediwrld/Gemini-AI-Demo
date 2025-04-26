@@ -1,96 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Simple Gemini Clone</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 20px;
-    }
-
-    #input-container {
-      margin-bottom: 10px;
-    }
-
-    #output-container {
-      border: 1px solid #ccc;
-      padding: 10px;
-      min-height: 50px; /* Ensure it's visible even without content */
-    }
-  </style>
-  <link rel="stylesheet" href="/Gemini-demo/demo.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="demo.css">
+  <title>Gemini AI</title>
 </head>
 <body>
- 
 
-  <nav>
-      <div class="chats-bar side-bar">
-        <img src="/images/menu-bar.png" alt="menu bar icon" class="menu-bar-icon">
+
+      <nav>
+        <div class="chats-bar side-bar">
+          <img src="images/menu-bar.png" alt="menu bar icon" class="menu-bar-icon">
       </div>
-      <div class="nav-bar">
-        <div class="left-side">
-          <p>Gemini</p>
+        <div class="nav-bar">
+          <div class="left-side">
+            <p class="gemini-text">Gemini</p>
+          </div>
+
+          <div class="change-pfp-js">
+            <div class="wrapper-change-pfp">
+                <p class="changePfp-text"></p>
+                <input type="file" id="profilePicInput"  accept="image/*">
+            </div>
+             
+              <div class="right-side">
+                <img src="images/profile-picture.jpeg" alt="McLovinn"  class="profile-picture">
+              </div>
+            </div>
+         </div>
+  
+      </nav>
+
+   
+      <div class="lebron-james-js">
+        <div class="introduction">
+            <div class="introduction-header">
+                <h1>Hello there,</h1>
+                <h2>How can I help you today?</h2>
+            </div>
         </div>
-        <div class="right-side">
-          <img src="/images/profile-picture.jpeg" alt="McLovinn"  class="profile-picture">
+        <pre><code></code></pre>
+        <div class="prompt-suggestions-section">
+          <div class="suggestion-wrapper">
+            <div class="suggestion" id="longer-suggestion">
+                <p class="suggestion-js">Write a short story where a time traveler accidentally becomes a famous historical figure</p>
+                <img src="images/destination-icon.png" alt="destination icon" class="suggestion-icon">
+            </div>
+    
+            <div class="suggestion">
+                <p class="suggestion-js">Plan a scenic 5-day road trip through the U.S. or Europe in 300 words</p>
+                <img src="images/lightbulb-icon.png" alt="lightbulb icon" class="suggestion-icon">
+            </div>
+    
+            <div class="suggestion" id="longer-suggestion">
+                <p class="suggestion-js">Share fun and easy team activities we can do online or in a mixed office/remote setup</p>
+                <img src="images/chat-icon.png" alt="chat icon" class="suggestion-icon">
+            </div>
+    
+            <div class="suggestion">
+                <p class="suggestion-js">Create a dialogue between two rival AI assistants in the year 2050</p>
+                <img src="images/code-block-icon.png" alt="code block icon" class="suggestion-icon">
+            </div>
+          </div>
         </div>
-      </div>
-  </nav>
-
-
-  <div class="phaseOne">
-    <div class="phaseOne-centering-container">
-      <div class="phaseOne-top-intro">
-        <h1>Hello, Dev.</h1>
-        <h2>How can I help you today?</h2>
-     </div>
-
-     <div class="phaseOne-midddle-suggestions">
-        <div class="suggestion">
-          <p>What is the weather in Lagos?</p>
-          <img src="/images/destination-icon.png" alt="destination icon" class="suggestion-icon">
-        </div>
-
-        <div class="suggestion">
-          <p>Tell me 5 interesting facts about the world</p>
-          <img src="/images/lightbulb-icon.png" alt="lightbulb icon" class="suggestion-icon">
-        </div>
-
-        <div class="suggestion">
-          <p>What is the capital of Nigeria?</p>
-          <img src="/images/chat-icon.png" alt="chat icon" class="suggestion-icon">
-        </div>
-
-        <div class="suggestion">
-          <p>Can you name me 5 places to visit during a summer vacation</p>
-          <img src="/images/code-block-icon.png" alt="code block icon" class="suggestion-icon">
-        </div>
-
-     </div>
-
-     <div class="phaseOne-bottom-inputPrompt">
       
-          <div class="input-container">
-            <input type="text" placeholder="Enter a prompt here" class="prompt-input">
-            <img src="/images/add-photo-icon.png" alt="Image" class="input-icon left-icon">
-            <img src="/images/mic-icon.png" alt="Mic" class="input-icon right-icon">
+        <div class="prompt-input-section">
+            <div class="input-container">
+              <div class="prompt-input-phaseDebugging">
+                   <input type="text" placeholder="Enter a prompt here" class="prompt-input">
+              </div>
+               
+                <img src="images/add-photo-icon.png" alt="Image" class="input-icon left-icon">
+                <img src="images/mic-icon.png" title="Read aloud" alt="Mic" class="input-icon right-icon">
+            </div>
         </div>
-
-     </div>
     </div>
-  </div>
 
-<!--   
-  <div id="input-container">
-    <label for="user-input" style="color: #000;">Enter your prompt:</label>
-    <input type="text" id="user-input" name="user-input" placeholder="Enter a prompt here">
-    <button id="submit-button">Submit</button>
-  </div>
 
-  <div id="output-container">
-    <p id="api-response"></p> 
-  </div> -->
+    <div class="micheal-jordan-js">
+        <div class="conversation-js">
+            <div class="user-input-container-js">
+                <p class="user-input-js"></p>
+            </div>
+            <div class="api-response-js">
+             
+            </div>
+        </div>
+    </div>
+    
+      
+     
 
-  <script src="scriptdemo.js"></script>
+      <script type="module" src="scriptdemo.js"></script>
+      <elevenlabs-convai agent-id="WLpe5LeDJQK3a7IUtyWU"></elevenlabs-convai><script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 </body>
 </html>

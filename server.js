@@ -1,32 +1,46 @@
-import express from "express";
-import cors from "cors";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+// server.js
+const express = require('express');
+const dotenv = require('dotenv');
+const fs = require('fs');
+const cors = require('cors');
+const { buffer } = require('stream/consumers');
+const { ElevenLabsClient } = require('elevenlabs');
+
+dotenv.config();
 
 const app = express();
-const PORT = 5000;
-const API_KEY = "AIzaSyAWvNeaZrGQSK3zOPSnkX6lwPtJCQYMATk";
-
 app.use(cors());
 app.use(express.json());
 
-const genAI = new GoogleGenerativeAI(API_KEY);
+const client = new ElevenLabsClient({
+  apiKey: process.env.ELEVEN_LABS_API_KEY
+});
 
-app.post("/generate", async (req, res) => {
+app.post('/tts', async (req, res) => {
   try {
-    const { prompt } = req.body;
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const result = await model.generateContent(prompt);
-    
-    // Correct way to extract response text
-    const response = result.response?.candidates?.[0]?.content || "No response generated.";
-    
-    res.json({ response });
-  } catch (error) {
-    console.error("Error generating response:", error);
-    res.status(500).json({ error: "Failed to generate response" });
+    const { text } = req.body;
+
+    const audioStream = await client.textToSpeech.convert("JBFqnCBsd6RMkjVDRZzb", {
+      text,
+      model_id: "eleven_multilingual_v2",
+      output_format: "mp3_44100_128",
+    });
+
+    const audioBuffer = await buffer(audioStream);
+
+    res.set({
+      'Content-Type': 'audio/mpeg',
+      'Content-Length': audioBuffer.length,
+    });
+
+    res.send(audioBuffer);
+  } catch (err) {
+    console.error("TTS Error:", err);
+    res.status(500).send("TTS generation failed.");
   }
 });
 
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });

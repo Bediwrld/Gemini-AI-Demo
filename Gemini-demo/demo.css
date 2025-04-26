@@ -1,4 +1,683 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CO&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  font-family:'Poppins',Arial;
+  color:white;
+}
+
+body{
+  background-color:#1b1c1f;
+}
+nav {
+  display: flex;
+  height: 100px;
+}
+.gemini-text{
+  cursor: pointer;
+}
+
+.side-bar {
+  background-color: #282829;
+  width: 50px;
+  padding:1.7rem 2.2rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  
+}           
+.prompt-input{
+  padding-left: 1rem !important;
+}                               
+  elevenlabs-convai {
+    position: fixed;   
+    bottom: 44px;                        /* conversation with built in ElevenLabs AI API */
+    left:10px;                                                  
+    transform: translateY(-40px);
+    z-index: 1000; 
+  }
+
+  .input-icon{
+    display:none;   /* Hide the icon by default */
+  }
+/* 
+.input-icon:hover{
+  transition: transform 1s ease-in-out;
+  transition: 1s;
+  width: 30px;
+  height: 30px;
+} */
+.menu-bar-icon{
+  width:20px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between; 
+  width: 100%; 
+  padding: 20px 20px;
+}
+
+.profile-picture {
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%; 
+  align-self: flex-end; 
+}
+
+.left-side p{
+  font-size:34px;
+  color:#979797;
+  font-family:'Poppins';
+}
+
+
+.introduction{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  margin-right:26rem;
+  margin-top:2.5rem;
+  margin-bottom:4.3rem;
+}
+
+.introduction-header h1{
+  font-size: 3rem;
+    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158),yellow);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     font-weight:550;
+}
+
+/* .gemini-text{
+  background: linear-gradient(to right, #4285F4,purple);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  font-size: 34px;
+  z-index: 5;
+} */
+
+.introduction-header h2{
+  font-size:2.5rem;
+  font-weight:500;
+  color:#9f9fa1;
+}
+.prompt-suggestions-section{
+  display: flex;
+  justify-content: center;
+}
+
+.suggestion-wrapper{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.prompt-input-section {
+  position: fixed;
+  bottom: 85px;  /* Keeps input at the bottom */
+  left: 45.3%;
+  transform: translateX(-50%);
+  width: 60%;  /* Adjust width as needed */
+  display: flex;
+  justify-content: center;
+}
+
+.suggestion{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  background-color: #282829;
+  width:220px;
+  height:200px;
+  color: #858589;
+  border-radius:10px;
+  margin:.2rem .65rem;
+  padding:1rem 1rem;
+  font-size:16px;
+  cursor: pointer;
+}
+
+
+.suggestion-icon{
+  width:24px;
+  height:24px;
+  color:rgb(204, 200, 200);
+  align-self: flex-end;
+}
+
+.prompt-input-section{
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.prompt-input{
+  background-color: #282829;
+  color: rgb(232, 224, 224);
+  border: none;
+  width: 60rem;
+  height: 4rem;
+  border-radius:2rem;
+  padding-left: 3rem;
+  padding-right: 3rem; 
+  font-size: 16px;
+  position: relative;
+  left:75px;
+}
+
+.prompt-input-phaseTwo{
+  background-color: #282829;
+  color: rgb(232, 224, 224);
+  border: none;
+  width: 55rem;
+  height: 4rem;
+  border-radius: 1.7rem;
+  padding-left: 3rem;
+  padding-right: 3rem; 
+  font-size: 16px;
+}
+
+.suggestion:hover{
+  background-color: #38383a;
+  font-size: 17px;
+  transition: 1s;
+}
+
+
+.suggestion:hover .suggestion-icon{
+  transform: scale(1.3); 
+  transition: transform 1s ease-in-out;
+}
+
+.input-container{
+  display: flex;
+  align-self: center;
+  position: relative;
+}
+.input-icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.left-icon{
+  left:12px;
+}
+
+.right-icon{
+  right:12px;
+}
+
+.micheal-jordan{
+  display: flex;
+  width:100vh;
+  height: calc(100vh - 100px);
+  justify-self:center;
+}
+
+.conversation{
+  display: flex;
+  width:100%;
+  gap:2rem;
+  flex-direction: column;
+}
+.suggestion-js{
+  color: #abaaaa;
+}
+.user-input-container-js{
+  width: fit-content;
+  height: fit-content;
+  background-color:#38383a;
+  justify-self: flex-end;
+  align-self: flex-end;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.api-response-js{
+ display: none;
+}
+
+.api-response{
+  display: flex;
+  width:fit-content;
+}
+
+.user-input{
+  font-size:1rem;
+  color:white;
+  padding:7px 15px;
+}
+
+
+.suggestion-js-input{
+  display: flex;
+  width:fit-content;
+  height: fit-content;
+  background-color: #38383a;
+}
+
+
+
+
+.api-response-js{
+  font-size: 1rem;
+}
+
+
+
+.conversation-js {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.user-message, .ai-message {
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #0078ff;
+  color: white;
+}
+
+.ai-message {
+  align-self: flex-start;
+  background-color: #38383a;
+  color: #c1c1c9;
+}
+
+
+.conversation-js::-webkit-scrollbar {
+  width: 8px; /* Thin scrollbar */
+}
+
+.conversation-js::-webkit-scrollbar-track {
+  background: #1e1e1e; 
+  border-radius: 10px;
+}
+
+.conversation-js::-webkit-scrollbar-thumb {
+  background: #0078ff; 
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.conversation-js::-webkit-scrollbar-thumb:hover {
+  background: #005bb5;
+}
+
+
+.conversation-js {
+  scrollbar-width: thin;
+  scrollbar-color: #0078ff #1e1e1e;
+}
+
+.change-pfp{
+  align-self: center;
+  display: flex;
+  align-self: center;
+}
+
+.nav-bar{
+  text-align: center;
+  align-items: center;
+}
+
+
+.change-pfp {
+  display: flex;
+  justify-content:space-around;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: #2b2b2f;
+  width: fit-content;
+  min-width: 30rem;
+  padding: 0.8rem;
+  border-radius: 0.8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -180%);
+  z-index: 10; 
+  color: white;
+}
+.changePfp-text{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #b8b8bc;
+}
+#profilePicInput{
+  align-self: center;
+  position: relative;
+  left:2rem;
+  
+}
+
+.wrapper-change-pfp{
+  gap: .5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-picture{
+  cursor: pointer;
+  object-fit: cover;
+  margin-top: .5rem;
+  object-position: center;
+}
+
+
+.blurred-background::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.3); 
+  z-index: 5;
+}
+
+.message {
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #0078ff;
+  color: white;
+}
+
+.ai {
+  align-self: flex-start;
+  background-color: #38383a;
+  color: #c1c1c9;
+}
+
+
+.message ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.message li {
+  margin-bottom: 5px;
+}
+
+
+.message code {
+  background-color: #282c34;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  color: #f8c555;
+}
+
+
+
+
+@media screen and (max-width:768px){
+  .prompt-input{
+    position:relative;
+    bottom:-130px;
+    margin-bottom:100px;
+    width:30rem;
+    left:35px;
+    border-radius:14px;
+  }
+  .introduction{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-self: center !important;
+    margin-right: 0% !important;
+      
+  }
+  
+  elevenlabs-convai {
+    display: none;
+  }  
+  .introduction-header h1{
+    font-size: 2.3rem;
+    text-align: center;
+    background: linear-gradient(to right, #3f81ea,#0078ff,rgb(158, 7, 158), rgb(158, 7, 158),rgb(244, 2, 2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+   
+  .suggestion-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+  }
+  .suggestion{
+    width:300px;
+    font-size:16px;
+    margin-top:1rem;
+    height:150px;
+  }
+
+  .introduction{
+    margin-bottom:0;
+    margin-top:0;
+  }
+  
+}
+
+@media screen and (max-width:698px){
+  .micheal-jordan{
+    display: flex;
+    justify-content: center;
+  }
+  .conversation-js{
+    width:70%;
+  }
+
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+  }
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+    position:fixed;
+    width:24rem;
+    bottom:-100px;
+    left:-15px;  
+  }
+}
+
+
+@media screen and (max-width: 649px) {
+  .micheal-jordan{
+    display: flex;
+    justify-content: center;
+  }
+  .suggestion-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    margin: 0 2rem;
+  }
+  .suggestion {
+    font-size: 13px;
+    width: 180px;
+    pointer-events: auto; /* Make sure it's still clickable */
+  }
+
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+    position:fixed;
+    width:24rem;
+    bottom:-100px;
+    left:-15px;  
+  }
+
+  /* .prompt-input-phaseTwo{
+    position:relative;
+    bottom:400px;
+  } */
+  .suggestion:hover {
+    font-size: 13px;
+    transition: none;
+  }
+
+  .suggestion:hover .suggestion-icon {
+    transform: none;
+    transition: none;
+  } 
+
+  
+}
+
+
+
+
+@media screen and (max-width:320px){
+
+  .gemini-text{
+    font-size:30px;
+    /* background: linear-gradient(to right, #3f81ea, #0078ff, rgb(158, 7, 158), rgb(158, 7, 158));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+  }
+  .right-side img{
+    width:35px;
+    height: auto;
+    object-fit: cover;
+}
+  .introduction-header h1{
+    font-size: 33px;
+    text-align:left;
+  }
+  .introduction-header h2{
+    font-size:1.3rem;
+    align-self: center;
+    text-align: left;
+  }
+
+
+  .suggestion{
+    width:270px;
+    height:60px;
+    display: flex;
+    flex-direction:row;
+    /* position: relative; */
+  }
+  #longer-suggestion{
+    height:70px;
+  }
+  .suggestion p{
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 10px;
+    color: #858589;
+  }
+
+  
+
+  .suggestion-icon{
+    width:1rem;
+    height: auto;
+    position: relative;
+    top:10px;
+  }
+
+
+  .prompt-input{
+    width: 270px;
+  }
+
+  .prompt-input::placeholder{
+    font-size: 14px;
+    color: #858589;
+  }
+
+
+  .conversation-js{
+    width:240px;
+  }
+  .user-message{
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .ai-message{
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+   .prompt-input{ 
+    width:250px;
+    position: fixed;
+    bottom:300px;
+    }
+   
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CO&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
@@ -24,9 +703,9 @@ body{
 
 
 .menu-bar-icon{
-  display: none;   /* hide the menu bar icon on desktop*/
+  display: none;   /* hide the menu bar icon on desktop
 } 
-
+/* 
 
 .profile-picture{
   width: 50px;
@@ -125,4 +804,4 @@ body{
   padding-left: 3rem;
   padding-right: 3rem; 
   font-size: 16px;
-}
+}  */ 

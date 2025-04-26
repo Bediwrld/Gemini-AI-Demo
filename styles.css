@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+CO&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
@@ -31,8 +30,30 @@ nav {
   align-items: center;
   display: none;
   
-}
+}           
+.prompt-input{
+  padding-left: 1rem !important;
+}                               
+  elevenlabs-convai {
+    position: fixed;   
+    bottom: 44px;                        /* conversation with built in ElevenLabs AI API */
+    left:10px;                                                  
+    transform: translateY(-40px);
+    z-index: 1000; 
+   }
 
+  .input-icon{
+    display:none;   /* Hide the icon by default */
+  }
+
+  
+/* 
+.input-icon:hover{
+  transition: transform 1s ease-in-out;
+  transition: 1s;
+  width: 30px;
+  height: 30px;
+} */
 .menu-bar-icon{
   width:20px;
 }
@@ -69,8 +90,8 @@ nav {
 }
 
 .introduction-header h1{
-  font-size: 2.5rem;
-    background: linear-gradient(to right, #4285F4,purple,yellow,red);
+  font-size: 3rem;
+    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158),yellow);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -97,12 +118,17 @@ nav {
   justify-content: center;
 }
 
+.suggestion-wrapper{
+  display: flex;
+  justify-content: flex-start;
+}
+
 .prompt-input-section {
   position: fixed;
-  bottom: 85px;  /* Keeps input at the bottom */
-  left: 50%;
+  bottom: 85px;  
+  left: 45.3%;
   transform: translateX(-50%);
-  width: 60%;  /* Adjust width as needed */
+  width: 60%; 
   display: flex;
   justify-content: center;
 }
@@ -133,31 +159,20 @@ nav {
 .prompt-input-section{
   display: flex;
   justify-content: center;
- 
 }
 
 .prompt-input{
   background-color: #282829;
   color: rgb(232, 224, 224);
   border: none;
-  width: 55rem;
+  width: 60rem;
   height: 4rem;
-  border-radius: 1.7rem;
+  border-radius:2rem;
   padding-left: 3rem;
   padding-right: 3rem; 
   font-size: 16px;
-}
-
-.prompt-input-phaseTwo{
-  background-color: #282829;
-  color: rgb(232, 224, 224);
-  border: none;
-  width: 55rem;
-  height: 4rem;
-  border-radius: 1.7rem;
-  padding-left: 3rem;
-  padding-right: 3rem; 
-  font-size: 16px;
+  position: relative;
+  left:75px;
 }
 
 .suggestion:hover{
@@ -200,7 +215,30 @@ nav {
   height: calc(100vh - 100px);
   justify-self:center;
 }
+.phaseTwo-input-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 30px;  
+  transform: translateX(-50%);
+  left: 45%;
+  width: 100%;
+  z-index: 1000; 
+}
 
+
+.phaseTwo-input{
+  background-color: #282829;
+  position: fixed;
+  width: 600px;
+  align-self: center;
+  bottom:30px;
+  padding: 12px 8px;
+  padding-left:12px;
+  border: none;
+  border-radius: 1rem;
+ }
 .conversation{
   display: flex;
   width:100%;
@@ -257,7 +295,7 @@ nav {
   flex-direction: column;
   gap: 10px;
   width: 100%;
-  max-height: 400px;
+  max-height: 520px;
   overflow-y: auto;
   padding: 10px;
 }
@@ -413,3 +451,249 @@ nav {
   font-family: "Courier New", monospace;
   color: #f8c555;
 }
+
+
+@media screen and (max-width:768px){
+  .prompt-input{
+    position:relative;
+    bottom:-130px;
+    margin-bottom:100px;
+    width:30rem;
+    left:35px;
+    border-radius:14px;
+  }
+  .introduction{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-self: center !important;
+    margin-right: 0% !important;
+      
+  }
+  
+  elevenlabs-convai {
+    display: none;
+  }  
+  .introduction-header h1{
+    font-size: 2.3rem;
+    text-align: center;
+    background: linear-gradient(to right, #3f81ea,#0078ff,rgb(158, 7, 158), rgb(158, 7, 158),rgb(244, 2, 2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+   
+  .suggestion-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+  }
+  .suggestion{
+    width:300px;
+    font-size:16px;
+    margin-top:1rem;
+    height:150px;
+  }
+
+  .introduction{
+    margin-bottom:0;
+    margin-top:0;
+  }
+  
+}
+
+@media screen and (max-width:698px){
+  .micheal-jordan{
+    display: flex;
+    justify-content: center;
+  }
+  .conversation-js{
+    width:70%;
+  }
+
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+  }
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+    position:fixed;
+    width:24rem;
+    bottom:-100px;
+    left:-15px;  
+  }
+}
+
+
+@media screen and (max-width: 649px) {
+  .micheal-jordan{
+    display: flex;
+    justify-content: center;
+  }
+  .suggestion-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    margin: 0 2rem;
+  }
+  .suggestion {
+    font-size: 13px;
+    width: 180px;
+    pointer-events: auto; /* Make sure it's still clickable */
+  }
+
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+    position:fixed;
+    width:24rem;
+    bottom:30px;
+    left:-15px;  
+  }
+
+  /* .prompt-input-phaseTwo{
+    position:relative;
+    bottom:400px;
+  } */
+  .suggestion:hover {
+    font-size: 13px;
+    transition: none;
+  }
+
+  .suggestion:hover .suggestion-icon {
+    transform: none;
+    transition: none;
+  } 
+
+  
+}
+
+@media screen and (max-width:320px){
+
+  .gemini-text{
+    font-size:30px;
+  }
+  .right-side img{
+    width:35px;
+    height: auto;
+    object-fit: cover;
+}
+.micheal-jordan{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+  .introduction-header h1{
+    font-size: 33px;
+    text-align:left;
+  }
+  .introduction-header h2{
+    font-size:1.3rem;
+    align-self: center;
+    text-align: left;
+  }
+
+ .conversation-js{
+  max-height: 480px;
+ }
+
+ 
+  .suggestion{
+    width:270px;
+    height:60px;
+    display: flex;
+    flex-direction:row;
+    z-index: 1000;
+    /* position: relative; */
+  }
+  .user-message{
+    font-size: 10px;
+    padding: 4px 8px;
+    max-width: 95%;
+  }
+  .ai-message{
+    font-size: 10px;
+    padding: 4px 8px;
+    max-width: 95%;
+  }
+
+  .conversation-js{
+    width:100%;
+    padding:0 18px;
+  }
+  #longer-suggestion{
+    height:70px;
+  }
+
+ 
+  .suggestion p{
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 10px;
+    color: #858589;
+  }
+
+  .suggestion-icon{
+    width:1rem;
+    height: auto;
+    position: relative;
+    top:10px;
+  }
+
+  .prompt-input{
+    width: 270px;
+    position: relative;
+    bottom:-90px;
+    left:1rem;
+  }
+
+  .prompt-input-section{
+    display: flex;
+  }
+
+  .prompt-input::placeholder{
+    font-size: 14px;
+    color: #858589;
+  }
+
+  .user-message{
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .ai-message{
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+   .phaseTwo-input{
+    background-color: #282829;
+    position: fixed;
+    width: 270px;
+    left: 2rem;
+    bottom:10px;
+    padding: 12px 8px;
+    padding-left:12px;
+    border: none;
+    border-radius: 1rem;
+   }
+  }
+
+
+
+
+
+
+  @media screen and (max-width: 375px) {
+    body{
+      color:red;
+    }
+  }
+  

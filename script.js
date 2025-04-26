@@ -4,13 +4,12 @@ const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-
 const phaseOne = document.querySelector('.lebron-james-js');
 const suggestion = document.querySelectorAll('.suggestion');
 const phaseTwo = document.querySelector('.micheal-jordan-js');
-
 const userInput = document.querySelector('.prompt-input');
-const userInputSection  = document.querySelector('.prompt-input-section') // Keep input always accessible
+const userInputSection  = document.querySelector('.prompt-input-section'); 
 const displayInput = document.querySelector('.user-input-js');
 const layoutConversation = document.querySelector('.conversation-js');
-const apiResponseContainer = document.querySelector('.api-response-js'); // Container for responses
-const geminiText = document.querySelector('.gemini-text'); //Title text
+const apiResponseContainer = document.querySelector('.api-response-js'); 
+const geminiText = document.querySelector('.gemini-text');
 
 let promptHistory = []; // Store conversation history
 let currentSession = 0;
@@ -19,6 +18,7 @@ let chatMessages = JSON.parse(localStorage.getItem('chatMessages')) || []; // Lo
 if (localStorage.getItem('aiResponse')) {
     console.log(localStorage.getItem('aiResponse'));
 }
+
 
 geminiText.addEventListener('click', function () {
     resetToPhaseOne();
@@ -34,18 +34,23 @@ geminiText.addEventListener('click', function () {
 
 function resetToPhaseOne() {
     if (phaseTwo) {
+
+        const phaseTwoInputs = document.querySelectorAll('.phaseTwo-input-container');
+        phaseTwoInputs.forEach(container => container.remove());
+
         phaseOne.style.display = '';
         currentSession++;
         phaseTwo.classList.remove('micheal-jordan');
         phaseTwo.style.display = 'none';
 
-        if (!phaseOne.contains(userInputSection)) {
-            phaseOne.appendChild(userInputSection);
-        }
+        
+        // if (!phaseOne.contains(userInputSection)) {
+        //     phaseOne.appendChild(userInputSection);
+        // }
 
         layoutConversation.innerHTML = '';
         userInput.value = '';
-        history.pushState({ phase: 'phaseOne' }, '', '#phaseOne');
+        history.pushState({ phase: 'phaseOne' }, '', '#phaseOne'); 
     }
 }
 
@@ -114,6 +119,7 @@ async function fetchAIResponse(userText, isSuggestionClick = false) {
 
         chatMessages.push({ role: 'model', content: aiText });
         promptHistory.push({ prompt: userText, response: aiText });
+        console.log(promptHistory);
 
         console.log(aiText);
     } catch (error) {
@@ -123,6 +129,7 @@ async function fetchAIResponse(userText, isSuggestionClick = false) {
         console.error("API Error:", error);
     }
 }
+
 
 
 
@@ -141,14 +148,39 @@ function appendMessage(sender, text) {
   layoutConversation.scrollTop = layoutConversation.scrollHeight;
 }
 
+// let userIsScrolling = false;
+
+// layoutConversation.addEventListener('scroll', () => {
+//     const distanceFromBottom = layoutConversation.scrollHeight - layoutConversation.scrollTop - layoutConversation.clientHeight;
+    
+//     // If the user is 150px or more away from bottom, assume manual scrolling
+//     if (distanceFromBottom > 150) {
+//         userIsScrolling = true;
+//     } 
+//     // If the user scrolls back near the bottom manually, reset
+//     else if (distanceFromBottom < 50) {
+//         userIsScrolling = false;
+//     }
+// });
+
+
+
+let isTyping = false;
 //function to display the text with an animation that types it out in real time
 function typeText(element,text,speed = 15){
     let index = 0;
+    isTyping = true;
     function type(){
         if(index < text.length){
             element.textContent += text[index];
             index++;
+            // if (!userIsScrolling) {
+            //     layoutConversation.scrollTop = layoutConversation.scrollHeight;
+            // }
             setTimeout(type,speed);
+        }
+        else{
+            isTyping = false;
         }
     }
     type();
@@ -156,25 +188,61 @@ function typeText(element,text,speed = 15){
 
 
 
+let phaseTwoInput;
+
 // Function to show phaseTwo and allow continuous conversation
 function showConversation(userText, isSuggestionClick = false) {
-  if (phaseOne) {
+  if (phaseTwo) {
       phaseOne.style.display = 'none';
       phaseTwo.classList.add('micheal-jordan');
       phaseTwo.style.display = 'flex';
 
-      // Move input section inside phaseTwo dynamically
-      if (!phaseTwo.contains(userInputSection)) {
-          phaseTwo.appendChild(userInputSection);
-      }
 
-      userInputSection.style.display = 'flex'; // Make sure it's visible
+      if (!document.querySelector('.phaseTwo-input')) {
+        // Create input container to maintain proper spacing
+        const inputContainer = document.createElement('div');
+        inputContainer.classList.add('phaseTwo-input-container');
+        inputContainer.style.marginTop = '40px'; // Add spacing
+        
+        phaseTwoInput = document.createElement('input');
+        phaseTwoInput.placeholder = 'Enter a prompt here';
+        phaseTwoInput.classList.add('phaseTwo-input');
+        
+        inputContainer.appendChild(phaseTwoInput);
+        
+        // Append at the bottom of phaseTwo *after* the conversation div
+        phaseTwo.appendChild(inputContainer);
+
+        // Add enter key listener to phaseTwoInput
+phaseTwoInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter' && phaseTwoInput.value.trim() !== "") {
+        if (isTyping) {
+            event.preventDefault(); // prevent sending
+            console.log('Please wait for the AI to finish responding.');
+            return;
+        }
+        const userText = phaseTwoInput.value.trim();
+        phaseTwoInput.value = "";  // Clear input after sending
+        showConversation(userText);
+    }
+});
+    }
+
+
+ // Reset background color
+      // Move input section inside phaseTwo dynamically
+    //   if (!phaseTwo.contains(userInputSection)) {
+    //       phaseTwo.appendChild(userInputSection);
+    //   }
+    
+    //   userInputSection.style.display = 'flex'; // Make sure it's visible
   }
 
   appendMessage("user", userText);
   fetchAIResponse(userText,isSuggestionClick);
-  history.pushState({ phase: 'phaseTwo' }, '', '#phaseTwo');
+  history.pushState({ phase: 'phaseTwo' }, '', '#phaseTwo'); //change URL hash
 }
+
 
 // Event listener for clicking a suggestion
 suggestion.forEach(suggestionElement => {
@@ -194,6 +262,10 @@ userInput.addEventListener('keydown', function (event) {
         showConversation(userText);
     }
 });
+
+
+
+
  
 
 const changePfp = document.querySelector('.change-pfp-js');
@@ -220,7 +292,7 @@ function toggleChangePfp() {
     }
 }
 
-// Open popup when clicking the profile picture
+// Open popup section when clicking the profile picture
 profilePic.addEventListener('click', toggleChangePfp);
 
 // Handle file selection and update profile picture
@@ -247,6 +319,71 @@ document.addEventListener('click', function(event) {
     }
 });
 
+
+
+// const promptIcon = document.querySelector('.right-icon');
+// promptIcon.addEventListener('click', function () {
+//    if(lastAiResponse.trim()){
+//     playTTS(lastAiResponse);
+//    }
+//    else{
+//     console.log('No AI response to play.');
+//    }
+// });
+
+  
+// async function playTTS(text) {
+//     try {
+//       const response = await fetch('http://localhost:3000/tts', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ text })
+//       });
+  
+//       if (!response.ok) throw new Error("TTS failed");
+  
+//       const audioBlob = await response.blob();
+//       const audioUrl = URL.createObjectURL(audioBlob);
+  
+//       const audio = new Audio(audioUrl);
+//       audio.play();
+//     } catch (error) {
+//       console.error("Audio Playback Error:", error);
+//     }
+//   }
+ 
+
+//   let lastAiResponse = ''; 
+// //this is for the elevenlabs API
+// import dotenv from 'dotenv';
+// dotenv.config();
+
+// import { ElevenLabsClient } from "elevenlabs";
+// import fs from 'fs';
+// import { buffer } from 'stream/consumers';
+
+// const client = new ElevenLabsClient({
+//   apiKey: "sk_a55e052e791f8187ee970aeac19099e32c09e9f7291f8062"
+// });
+
+// const audioStream = await client.textToSpeech.convert("JBFqnCBsd6RMkjVDRZzb", {
+//   text: aiText,
+//   model_id: "eleven_multilingual_v2",
+//   output_format: "mp3_44100_128",
+// });
+
+
+// // Convert stream to buffer
+// const audioBuffer = await buffer(audioStream);
+
+// // Save to file
+// fs.writeFileSync('output.mp3', audioBuffer);
+// console.log('✅ Audio saved as output.mp3 — go play it!');
+
+
+
+
+// This is for the Google Gemini API
 
 // import { GoogleGenerativeAI } from "@google/generative-ai";
 
