@@ -521,7 +521,94 @@ nav {
     max-height:480px;
   }
 }
-@media screen and (max-width:769px) and (min-width:427px){
+
+@media screen and (min-width:426px) and (max-width:500px){
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .introduction-header h1{
+    font-size: 2.4rem;
+  }
+  .introduction-header h2{
+    font-size: 1.5rem;
+  }
+  .introduction{
+    display: flex;
+   flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    margin-bottom:20px;
+  }
+
+    .suggestion-wrapper{
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+    }
+    .suggestion{
+      width:90%;
+      text-align: start;
+      height:80px;
+      font-size: 14px;
+      display: flex;
+      padding:8px 8px;
+      flex-direction: row;
+      margin-bottom:10px;
+      gap:5px;
+    }
+    .prompt-input-section{
+      position: fixed;
+      bottom: 30px;  
+      left: 33%;
+      transform: translateX(-50%);
+      width: 90%;
+      display: flex;
+      justify-content: center;
+    }
+    .prompt-input{
+      height:50px;
+      width:95%;
+      border-radius: 10px;
+    }
+    .conversation-js{
+      max-height:480px;
+      font-size: 14px;
+      margin: 0 auto;
+    }
+
+    .phaseTwo-input-container {
+      position: fixed;
+      bottom:2px;
+      width:300px;
+      display: flex;
+   }
+   .conversation-js{
+    max-width:400px;
+  }
+  .user-message{
+    width: fit-content;
+  }
+  .ai-message{
+    width: fit-content;
+  }
+    .phaseTwo-input{
+      width: 350px;
+      height: 50px;
+      font-size: 14px;
+      border-radius: 10px;
+      margin-left:20px;
+      box-sizing: border-box;
+    }
+}
+@media screen and (max-width:769px) and (min-width:500px){
   html, body {
     height: 100%;
     margin: 0;
@@ -563,7 +650,7 @@ nav {
       bottom: 20px;  
       left: 40%;
       transform: translateX(-50%);
-      width: 90%;
+      width: 95%;
       display: flex;
       justify-content: center;
     }
@@ -642,7 +729,7 @@ nav {
     margin-bottom:10px;
     gap:5px;
   }
-
+  
   .prompt-input-section{
     position: fixed;
     bottom: 20px;  
@@ -665,7 +752,7 @@ nav {
     justify-content: center;
   }
   .conversation-js{
-    width:310px;
+    width:380px;
     max-height:480px;
   }
 
@@ -832,8 +919,7 @@ nav {
     justify-content: center;
     width: 100%;
     margin-bottom: 1.5rem;
-    position: relative;
-    right:20px;
+    margin-left:10px;
   }
   .introduction-header h1{
     background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
