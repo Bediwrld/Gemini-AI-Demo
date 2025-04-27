@@ -453,465 +453,235 @@ nav {
 }
 
 
-
-@media screen and (max-width: 1440px) and (min-width: 1027px) {
-  .conversation-js{
-    max-height:440px;
+@media screen and (max-width:768px){
+  .prompt-input{
+    position:relative;
+    bottom:-130px;
+    margin-bottom:100px;
+    width:30rem;
+    left:35px;
+    border-radius:14px;
+  }
+  .introduction{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-self: center !important;
+    margin-right: 0% !important;
+      
   }
   
-  .prompt-input-section{
-    position: fixed;
-    bottom: 20px;  
-    left: 45%;
-    transform: translateX(-50%);
-    width: 90%;
-    display: flex;
-    justify-content: center;
-  }
-  .phaseTwo-input-container {
-    position: fixed;
-    bottom:2px;
-    width:300px;
-    display: flex;
-  }
-  .phaseTwo-input{
-    width: 700px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: 10px;
-    position: absolute;
-    left:-120px;
-    box-sizing: border-box;
-    align-self: center;
-  }
-}
-
-@media screen and (max-width:1026px) and (min-width:769px){
-  .prompt-input-section{
-    position: fixed;
-    bottom: 20px;  
-    left: 43%;
-    transform: translateX(-50%);
-    width: 90%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .prompt-input{
-    height:50px;
-    width:70%;
-    border-radius: 10px;
-  }
-
-    .phaseTwo-input-container {
-    position: fixed;
-    bottom:2px;
-    width:300px;
-    display: flex;
- }
-  .phaseTwo-input{
-    width: 650px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin-left:80px;
-    box-sizing: border-box;
-  }
-  .conversation-js{
-    max-height:480px;
-  }
-}
-@media screen and (max-width:769px) and (min-width:427px){
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
- 
-  .introduction{
-    display: flex;
-   flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    align-items: center;
-    width: 100%;
+  elevenlabs-convai {
+    display: none;
+  }  
+  .introduction-header h1{
+    font-size: 2.3rem;
     text-align: center;
-  
-  }
-
-    .suggestion-wrapper{
-      display: flex;
-      flex-direction: column;
-      justify-content:center;
-      align-items: center;
-    }
-    .suggestion{
-      width:90%;
-      text-align: start;
-      height:80px;
-      font-size: 14px;
-      display: flex;
-      padding:8px 8px;
-      flex-direction: row;
-      margin-bottom:10px;
-      gap:5px;
-    }
-    .prompt-input-section{
-      position: fixed;
-      bottom: 20px;  
-      left: 40%;
-      transform: translateX(-50%);
-      width: 90%;
-      display: flex;
-      justify-content: center;
-    }
-    .conversation-js{
-      max-height:480px;
-    }
-
-    .phaseTwo-input-container {
-      position: fixed;
-      bottom:2px;
-      width:300px;
-      display: flex;
-   }
-    .phaseTwo-input{
-      width: 600px;
-      height: 50px;
-      font-size: 14px;
-      border-radius: 10px;
-      margin-left:20px;
-      box-sizing: border-box;
-    }
-  }
-
-
-@media screen and (max-width:426px){
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  .lebron-james-js{
-    width: 425px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    align-self: center;
-    position: relative;
-    bottom:40px;
-  }
-  .introduction{
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    margin-left:20px;
-  }
-
-  .introduction-header h1{
-    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
+    background: linear-gradient(to right, #3f81ea,#0078ff,rgb(158, 7, 158), rgb(158, 7, 158),rgb(244, 2, 2));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-     font-weight:550;
-     font-size:2.5rem;
   }
-  .introduction-header h2{
-    font-size:1.5rem;
-  }
-
+   
   .suggestion-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left:10px;
-  }
-  .suggestion{
-    width:90%;
-    text-align: start;
-    height:80px;
-    font-size: 14px;
-    display: flex;
-    padding:8px 8px;
-    flex-direction: row;
-    margin-bottom:10px;
-    gap:5px;
-  }
-
-  .prompt-input-section{
-    position: fixed;
-    bottom: 20px;  
-    left: 30%;
-    transform: translateX(-50%);
-    width: 90%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .prompt-input{
-    height:50px;
-    width:95%;
-    border-radius: 10px;
-  }
-
-  
-  .micheal-jordan-js{
-    display: flex;
-    justify-content: center;
-  }
-  .conversation-js{
-    width:310px;
-    max-height:480px;
-  }
-
-  .ai-message{
-    font-size:13px;
-  }
-  .user-message{
-    font-size:13px;
-  }
-  
-  .phaseTwo-input-container {
-    position: fixed;
-    bottom:2px;
-    width:300px;
-    display: flex;
- }
-  .phaseTwo-input{
-    width: 300px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin-left:20px;
-    box-sizing: border-box;
-  }
-}
-
-
-
-@media  screen and (max-width: 376px) {
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  .lebron-james-js{
-    width: 375px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    align-self: center;
-    position: relative;
-    bottom:40px;
-  }
-  .introduction{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    position: relative;
-    right:20px;
-  }
-  .introduction-header h1{
-    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-     font-weight:550;
-     font-size:2.5rem;
-  }
-
-  .introduction-header h2{
-    font-size:1.5rem;
-  }
-  .suggestion-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-left:10px;
+    align-self: center;
+    flex-wrap: wrap;
   }
   .suggestion{
-    width:90%;
-    text-align: start;
-    height:80px;
-    font-size: 14px;
-    display: flex;
-    padding:8px 8px;
-    flex-direction: row;
-    margin-bottom:10px;
-    gap:5px;
+    width:300px;
+    font-size:16px;
+    margin-top:1rem;
+    height:150px;
   }
 
-  .prompt-input-section{
-    position: fixed;
-    bottom: 20px;  
-    left: 30%;
-    transform: translateX(-50%);
-    width: 90%;
-    display: flex;
-    justify-content: center;
+  .introduction{
+    margin-bottom:0;
+    margin-top:0;
   }
+  
+}
 
-  .prompt-input{
-    height:50px;
-    width:95%;
-  }
-
-
-  .micheal-jordan-js{
+@media screen and (max-width:698px){
+  .micheal-jordan{
     display: flex;
     justify-content: center;
   }
   .conversation-js{
-    width:310px;
-    max-height:480px;
+    width:70%;
   }
 
-  .ai-message{
-    font-size:13px;
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
   }
-  .user-message{
-    font-size:13px;
-  }
-  
-  .phaseTwo-input-container {
-    position: fixed;
-    bottom:2px;
-    width:300px;
-    display: flex;
- }
-  .phaseTwo-input{
-   
-    width: 280px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin-left:20px;
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+    position:fixed;
+    width:24rem;
+    bottom:-100px;
+    left:-15px;  
   }
 }
 
-@media screen and (max-width:320px) {
 
-  .introduction-header h1{
-    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-     font-weight:550;
-     font-size:2rem;
-  }
-  .introduction{
+@media screen and (max-width: 649px) {
+  .micheal-jordan{
     display: flex;
-    justify-content: flex-start;
-    z-index: 10;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    text-align:flex-start;
-    margin-top:none;
-    position: relative;
-    right:20px;
+    justify-content: center;
   }
-  /* * {
-    outline: 1px solid red; Temporarily add this to see element boundaries 
+  .suggestion-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    flex-wrap: wrap;
+    margin: 0 2rem;
+  }
+  .suggestion {
+    font-size: 13px;
+    width: 180px;
+    pointer-events: auto; /* Make sure it's still clickable */
+  }
+
+  .prompt-input{
+    width:27rem;
+    height:3rem !important;
+    position:fixed;
+    width:24rem;
+    bottom:30px;
+    left:-15px;  
+  }
+
+  /* .prompt-input-phaseTwo{
+    position:relative;
+    bottom:400px;
   } */
+  .suggestion:hover {
+    font-size: 13px;
+    transition: none;
+  }
+
+  .suggestion:hover .suggestion-icon {
+    transform: none;
+    transition: none;
+  } 
+
+  
+}
+
+@media screen and (max-width:320px){
+
+  .gemini-text{
+    font-size:30px;
+  }
+  .right-side img{
+    width:35px;
+    height: auto;
+    object-fit: cover;
+}
+.micheal-jordan{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+  .introduction-header h1{
+    font-size: 33px;
+    text-align:left;
+  }
   .introduction-header h2{
     font-size:1.3rem;
-    text-align: flex-start;
-  }
-  .introduction{
-    margin-bottom:10px;
-  }
-  .lebron-james-js{
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
     align-self: center;
-    height: 100vh - 40px;
-    position: relative;
-    bottom:40px;
+    text-align: left;
   }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-  .introduction{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-  }
-   .suggestion-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin:0 10px;
-  }
-  
+
+ .conversation-js{
+  max-height: 480px;
+ }
+
+ 
   .suggestion{
-    width:300px;
-    text-align: start;
-    height:80px;
-    font-size: 14px;
+    width:270px;
+    height:60px;
     display: flex;
-    padding:8px 8px;
-    flex-direction: row;
-    margin-bottom:15px;
-    gap:5px;
-
-  }
-  .prompt-input-section{
-    position: fixed;
-    bottom: 35px;  
-    left: 27%;
-    transform: translateX(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  .prompt-input{
-    width:280px;
-    height:50px;
-    font-size:14px;
-    border-radius:10px;
-  }
-  .micheal-jordan-js{
-    display: flex;
-    justify-content: center;
-  }
-  .conversation-js{
-    width:310px;
-    max-height:480px;
-  }
-
-  .ai-message{
-    font-size:13px;
+    flex-direction:row;
+    z-index: 1000;
+    /* position: relative; */
   }
   .user-message{
-    font-size:13px;
+    font-size: 10px;
+    padding: 4px 8px;
+    max-width: 95%;
   }
-  
-  .phaseTwo-input-container {
-    position: fixed;
-    bottom:2px;
-    width:300px;
+  .ai-message{
+    font-size: 10px;
+    padding: 4px 8px;
+    max-width: 95%;
+  }
+
+  .conversation-js{
+    width:100%;
+    padding:0 18px;
+  }
+  #longer-suggestion{
+    height:70px;
+  }
+
+ 
+  .suggestion p{
+    font-size: 12px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 10px;
+    color: #858589;
+  }
+
+  .suggestion-icon{
+    width:1rem;
+    height: auto;
+    position: relative;
+    top:10px;
+  }
+
+  .prompt-input{
+    width: 270px;
+    position: relative;
+    bottom:-90px;
+    left:1rem;
+  }
+
+  .prompt-input-section{
     display: flex;
- }
-  .phaseTwo-input{
-   
-    width: 280px;
-    height: 50px;
-    font-size: 14px;
-    border-radius: 10px;
-    margin-left:20px;
   }
-}
+
+  .prompt-input::placeholder{
+    font-size: 14px;
+    color: #858589;
+  }
+
+  .user-message{
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  .ai-message{
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+   .phaseTwo-input{
+    background-color: #282829;
+    position: fixed;
+    width: 270px;
+    left: 2rem;
+    bottom:10px;
+    padding: 12px 8px;
+    padding-left:12px;
+    border: none;
+    border-radius: 1rem;
+   }
+  }
