@@ -231,14 +231,17 @@ nav {
 .phaseTwo-input{
   background-color: #282829;
   position: fixed;
-  width: 600px;
+  width: 700px;
+  height:60px;
+  font-size: 16px;
   align-self: center;
-  bottom:30px;
+  bottom:20px;
   padding: 12px 8px;
   padding-left:12px;
   border: none;
   border-radius: 1rem;
- }
+ }git add styles.css
+
 .conversation{
   display: flex;
   width:100%;
