@@ -608,7 +608,7 @@ nav {
       box-sizing: border-box;
     }
 }
-@media screen and (max-width:769px) and (min-width:500px){
+@media screen and (max-width:769px) and (min-width:501px){
   html, body {
     height: 100%;
     margin: 0;
@@ -653,6 +653,12 @@ nav {
       width: 95%;
       display: flex;
       justify-content: center;
+    }
+
+    .prompt-input{
+      height:50px;
+      width:80%;
+      border-radius: 10px;
     }
     .conversation-js{
       max-height:480px;
@@ -778,7 +784,7 @@ nav {
     box-sizing: border-box;
   }
 }
-@media screen and (max-width: 405px){
+@media screen and (max-width: 405px) and (min-width:391px){
   html, body {
     height: 100%;
     margin: 0;
@@ -895,6 +901,117 @@ nav {
   }
 }
 
+@media screen and (max-width:391px) and (min-width:377px){
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .lebron-james-js{
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-self: center;
+    position: relative;
+    bottom:40px;
+  }
+  .introduction{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    margin-left:10px;
+  }
+  .introduction-header h1{
+    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     font-weight:550;
+     font-size:2.5rem;
+  }
+
+  .introduction-header h2{
+    font-size:1.5rem;
+  }
+  .prompt-suggestions-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  .suggestion-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-left:10px;
+  }
+  .suggestion{
+    width:80%;
+    text-align: start;
+    height:80px;
+    font-size: 14px;
+    display: flex;
+    padding:8px 8px;
+    flex-direction: row;
+    margin-bottom:10px;
+    gap:5px;
+  }
+
+  .prompt-input-section{
+    position: fixed;
+    bottom: 20px;  
+    left: 30%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .prompt-input{
+    height:50px;
+    width:85%;
+  }
+
+
+  .micheal-jordan-js{
+    display: flex;
+    justify-content: center;
+  }
+  .conversation-js{
+    width:310px;
+    max-height:480px;
+  }
+
+  .ai-message{
+    font-size:13px;
+  }
+  .user-message{
+    font-size:13px;
+  }
+  
+  .phaseTwo-input-container {
+    position: fixed;
+    bottom:2px;
+    width:300px;
+    display: flex;
+ }
+  .phaseTwo-input{
+   
+    width: 280px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-left:20px;
+  }
+}
+
 
 @media  screen and (max-width: 376px) and (min-width: 363px){
   html, body {
@@ -1008,48 +1125,6 @@ nav {
 }
 
 @media screen and (max-width:363px) and (min-width:322px){
-
-  .introduction-header{
-    text-align: center;
-    margin-left:10px;
-  }
-  .introduction-header h2{
-    text-align: center;
-  }
-  .prompt-suggestions-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 362px;
-    margin-right:10px;
-  }
-  .suggestion-wrapper{
-   display: flex;
-   margin-right:15px;
-  }
-  .suggestion{
-    width:280px;
-  }
-  .introduction-header h2{
-    font-size:1.4rem;
-  }
-  .prompt-input-section{
-    position: fixed;
-    bottom: 30px;  
-    left: 30%;
-    transform: translateX(-50%);
-    width: 90%;
-    display: flex;
-    justify-content: center;
-  }
-  .prompt-input{
-    width:280px;
-    border-radius: 30px;
-  }
-}
-
-@media screen and (max-width:320px) {
-
   .introduction-header h1{
     background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
     background-clip: text;
@@ -1095,6 +1170,128 @@ nav {
     padding: 0;
     overflow-x: hidden;
   }
+  .introduction{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+   .suggestion-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin:0 10px;
+  }
+  
+  .suggestion{
+    width:300px;
+    text-align: start;
+    height:80px;
+    font-size: 14px;
+    display: flex;
+    padding:8px 8px;
+    flex-direction: row;
+    margin-bottom:15px;
+    gap:5px;
+
+  }
+  .prompt-input-section{
+    position: fixed;
+    bottom: 35px;  
+    left: 27%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .prompt-input{
+    width:280px;
+    height:50px;
+    font-size:14px;
+    border-radius:10px;
+  }
+  .micheal-jordan-js{
+    display: flex;
+    justify-content: center;
+  }
+  .conversation-js{
+    width:310px;
+    max-height:480px;
+  }
+
+  .ai-message{
+    font-size:13px;
+  }
+  .user-message{
+    font-size:13px;
+  }
+  
+  .phaseTwo-input-container {
+    position: fixed;
+    bottom:2px;
+    width:300px;
+    display: flex;
+ }
+  .phaseTwo-input{
+   
+    width: 280px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-left:20px;
+  }
+  
+}
+
+@media screen and (max-width:320px) {
+
+  .introduction-header h1{
+    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     font-weight:550;
+     font-size:2rem;
+  }
+  .introduction{
+    display: flex;
+    justify-content: flex-start;
+    z-index: 10;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align:flex-start;
+    margin-top:none;
+    position: relative;
+    right:10px;
+  }
+  /* * {
+    outline: 1px solid red; Temporarily add this to see element boundaries 
+  } */
+  .introduction-header h2{
+    font-size:1.3rem;
+    text-align: flex-start;
+  }
+  .introduction{
+    margin-bottom:10px;
+  }
+  .lebron-james-js{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-self: center;
+    height: 100vh - 40px;
+    position: relative;
+    bottom:40px;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  
   .introduction{
     display: flex;
     align-items: center;
