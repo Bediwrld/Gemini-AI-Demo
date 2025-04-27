@@ -798,18 +798,27 @@ nav {
 }
 
 @media screen and (max-width:363px) and (min-width:322px){
+
+  .introduction-header{
+    text-align: center;
+    margin-left:10px;
+  }
+  .introduction-header h2{
+    text-align: center;
+  }
   .prompt-suggestions-section{
     display: flex;
-    justify-content: flex-start;
-    
+    justify-content: center;
+    align-items: center;
+    width: 362px;
+    margin-right:10px;
   }
   .suggestion-wrapper{
    display: flex;
-   justify-content: flex-start;
-   align-items: flex-start;
+   margin-right:15px;
   }
   .suggestion{
-    width:280px;;
+    width:280px;
   }
   .introduction-header h2{
     font-size:1.4rem;
@@ -817,7 +826,7 @@ nav {
   .prompt-input-section{
     position: fixed;
     bottom: 30px;  
-    left: 26%;
+    left: 30%;
     transform: translateX(-50%);
     width: 90%;
     display: flex;
@@ -825,6 +834,7 @@ nav {
   }
   .prompt-input{
     width:280px;
+    border-radius: 30px;
   }
 }
 
