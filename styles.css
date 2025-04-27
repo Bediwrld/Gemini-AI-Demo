@@ -694,7 +694,7 @@ nav {
 
 
 
-@media  screen and (max-width: 376px) {
+@media  screen and (max-width: 376px) and (min-width: 363px){
   html, body {
     height: 100%;
     margin: 0;
@@ -794,6 +794,37 @@ nav {
     font-size: 14px;
     border-radius: 10px;
     margin-left:20px;
+  }
+}
+
+@media screen and (max-width:363px) and (min-width:322px){
+  .prompt-suggestions-section{
+    display: flex;
+    justify-content: flex-start;
+    
+  }
+  .suggestion-wrapper{
+   display: flex;
+   justify-content: flex-start;
+   align-items: flex-start;
+  }
+  .suggestion{
+    width:280px;;
+  }
+  .introduction-header h2{
+    font-size:1.4rem;
+  }
+  .prompt-input-section{
+    position: fixed;
+    bottom: 30px;  
+    left: 26%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+  .prompt-input{
+    width:280px;
   }
 }
 
