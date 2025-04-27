@@ -588,7 +588,7 @@ nav {
   }
 
 
-@media screen and (max-width:426px){
+@media screen and (max-width:426px) and (min-width: 405px){
   html, body {
     height: 100%;
     margin: 0;
@@ -691,7 +691,122 @@ nav {
     box-sizing: border-box;
   }
 }
+@media screen and (max-width: 405px){
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+  .lebron-james-js{
+    width: 425px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-self: center;
+    position: relative;
+    bottom:40px;
+  }
+  .introduction{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    position: relative;
+    right:10px;
+  }
 
+  .introduction-header h1{
+    background: linear-gradient(to right, #4285F4,rgb(158, 7, 158));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+     font-weight:550;
+     font-size:2.5rem;
+  }
+  .introduction-header h2{
+    font-size:1.5rem;
+  }
+  .prompt-suggestions-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
+  .suggestion-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    position: relative;
+    right:10px;
+  }
+  .suggestion{
+    width:80%;
+    text-align: start;
+    height:80px;
+    font-size: 14px;
+    display: flex;
+    padding:8px 8px;
+    flex-direction: row;
+    margin-bottom:10px;
+    gap:5px;
+    align-self: center;
+  }
+
+  .prompt-input-section{
+    position: fixed;
+    bottom: 20px;  
+    left: 32%;
+    transform: translateX(-50%);
+    width: 90%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .prompt-input{
+    height:50px;
+    width:90%;
+    border-radius: 10px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  
+  .micheal-jordan-js{
+    display: flex;
+    justify-content: center;
+  }
+  .conversation-js{
+    width:310px;
+    max-height:480px;
+  }
+
+  .ai-message{
+    font-size:13px;
+  }
+  .user-message{
+    font-size:13px;
+  }
+  
+  .phaseTwo-input-container {
+    position: fixed;
+    bottom:2px;
+    width:300px;
+    display: flex;
+ }
+  .phaseTwo-input{
+    width: 300px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-left:20px;
+    box-sizing: border-box;
+  }
+}
 
 
 @media  screen and (max-width: 376px) and (min-width: 363px){
@@ -713,6 +828,7 @@ nav {
   .introduction{
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: center;
     width: 100%;
     margin-bottom: 1.5rem;
@@ -731,14 +847,22 @@ nav {
   .introduction-header h2{
     font-size:1.5rem;
   }
+  .prompt-suggestions-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+  }
   .suggestion-wrapper{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
     margin-left:10px;
   }
   .suggestion{
-    width:90%;
+    width:80%;
     text-align: start;
     height:80px;
     font-size: 14px;
@@ -761,7 +885,7 @@ nav {
 
   .prompt-input{
     height:50px;
-    width:95%;
+    width:85%;
   }
 
 
